@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieRow.css'
+import './styles.css'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ title, items }) => {
