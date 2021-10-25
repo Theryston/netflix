@@ -1,12 +1,14 @@
 import React from 'react';
 import './styles.css';
 
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ item }) => {
   console.log(item);
 
   const firstDate = new Date(item.first_air_date);
   const genres = [];
+  const overview = item.overview.length > 200 ? item.overview.substring(0, 200) + '...' : item.overview
 
   for (let i in item.genres) {
     genres.push(item.genres[i].name);
@@ -26,7 +28,7 @@ export default ({ item }) => {
             <div className="featured--year">{firstDate.getFullYear()}</div>
             <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons !== 1 ? 's' : ''}</div>
           </div>
-          <div className="featured--description">{item.overview}</div>
+          <div className="featured--description">{overview}</div>
           <div className="featured--buttons">
             <a href="/" className="featured--watchButton">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
